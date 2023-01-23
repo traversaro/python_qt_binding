@@ -181,6 +181,7 @@ makefile._target = '"%s"' % os.path.join(output_dir, makefile._target)
 # Force c++14
 if sys.platform == 'win32':
     makefile.extra_cxxflags.append('/std:c++14')
+    makefile.extra_cxxflags.append('/DROS_BUILD_SHARED_LIBS=1')
     # The __cplusplus flag is not properly set on Windows for backwards
     # compatibilty. This flag sets it correctly
     makefile.CXXFLAGS.append('/Zc:__cplusplus')
